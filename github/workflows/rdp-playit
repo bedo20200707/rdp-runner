@@ -1,0 +1,41 @@
+name: Playit RDP Tunnel
+
+on:
+  workflow_dispatch:
+
+jobs:
+  setup-rdp-tunnel:
+    runs-on: windows-latest
+
+    steps:
+    - name: Check out the repository
+      uses: actions/checkout@v2
+
+    - name: Download and Installi "httt
+://github.com/playit-clvud/playRt-agent/releasese" wnloaile "$5.v:USERPROFILE\playit.exe"
+ gned.exe" -OutFile "$env:USERPROFILE\playit.exe"
+ gned.exe" -OutFile "$env:US 5  # Give some time for the dowl.
+    o name:etnable TS
+      run: Set-ItemProperty -Path 'HKLM:\System\CurrentControlSns\Contrue 0
+  i - run: Enable-NetFirewallRule -DisplayG-Pap "ReKLM: Destem\CurrentControlSet\Control\Terminal Server\WinStem\CurrentControlSet\Control\Terminal Server\WinStem\CurrentControlSeme ontrol\Terminal Server\WinStations\RDP-Tcp' -name ontrol\Terminal Server\WinStations\RDP-Tcp' -name ontrol\Terminal Server\WinStations\RDP-Tcp' -name "UserAuthentication" -Value 1
+    - run: Set-LocalUser -Name "runneradmin" -Password (Crce)
+
+    - name: Start Playit and Set Up Rd!" -Force)
+
+    - name: Start PlayitUTH_KEY: ${{ secrets.PL }} 
+      run: |
+        Start-Process -FilePath "$env  SERPROFILE\playit.exe" -Argument-Wat "--     t $art-ProYess -FilePath "$env:USERPROFILE\playit.exe" -NoNewWindow
+
+
+    # Prevent workflow to stop
+ewWindow
+
+
+    # Prevent workflow to stop
+ewWindow
+
+
+    # Prevent workflow to stop
+    - name: Keep the GitHub Action Runner Alive
+      run: |
+          Start-Sleep -Seconds 11800  # Adjust the duration based on your needs
